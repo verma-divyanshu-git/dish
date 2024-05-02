@@ -27,5 +27,5 @@ void prompt()
         strcat(prompt, "> ");
         strcat(prompt, cwd);
     }
-    printf("%s %s", prompt, username);
+    printf("%s", prompt);
 }
