@@ -12,12 +12,13 @@
 #include <sys/stat.h>
 #include <dirent.h>
 
-
 char cwd[1000];
 char tempHome[1000];
 char sysname[1000];
 char username[1000];
 
-
 void init_shell();
 void prompt();
+void inputLoop();
+void pwd();
+void echo(int numTokens, char **token);
