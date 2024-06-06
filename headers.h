@@ -21,15 +21,18 @@ char sysname[100000];
 char username[1000000];
 char *commands[100000];
 char *token[100000];
+int curid;
 
 typedef struct jobs{
     char name[10000];
     pid_t pid;
 }job;
 
-long long job_count;
-struct jobs job_arr[100000];
-struct jobs current_fore;
+typedef struct jobs bjob;
+
+int job_count;
+bjob job_arr[100000];
+bjob current_fore;
 
 void init_shell();
 void prompt();
@@ -39,3 +42,5 @@ void echo(int numTokens, char **token);
 void cd (int numTokens, char** token);
 void ls(int numTokens);
 void foreground();
+void background(int numTokens);
+void childHandler();
