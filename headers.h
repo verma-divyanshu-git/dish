@@ -23,16 +23,14 @@ char *commands[100000];
 char *token[100000];
 int curid;
 
-typedef struct jobs{
+struct jobs{
     char name[10000];
     pid_t pid;
-}job;
-
+};
 typedef struct jobs bjob;
 
-int job_count;
+int bjob_count;
 bjob job_arr[100000];
-bjob current_fore;
 
 void init_shell();
 void prompt();
