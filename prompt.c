@@ -6,6 +6,7 @@ void init_shell()
     char* lusername = getpwuid(getuid())->pw_name;
     strcpy(username, lusername);
     gethostname(sysname, sizeof(sysname)); 
+    bjob_count = 0;
 }
 
 void prompt()
@@ -23,8 +24,8 @@ void prompt()
         strcat(prompt, "> ");
     }
     else{
-	strcat(prompt, cwd);
-	strcat(prompt, "> ");
+        strcat(prompt, cwd);
+        strcat(prompt, "> ");
     }
-    printf("%s", prompt);
+    printf(CYAN "%s" RESET, prompt);
 }

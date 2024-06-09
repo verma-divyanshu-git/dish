@@ -1,4 +1,2 @@
-CC = gcc
-CFLAGS = -Wall -Wextra
-EXECUTABLE = dish
-
+target:
+	gcc *.c -o dish
