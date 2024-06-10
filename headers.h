@@ -1,3 +1,6 @@
+#ifndef HEADERS_H
+#define HEADERS_H
+
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
@@ -14,6 +17,7 @@
 #include <time.h>
 #include <langinfo.h>
 #include <signal.h>
+#include <stdlib.h>
 
 #define RED "\x1b[31m"
 #define GREEN "\x1b[32m"
@@ -23,13 +27,13 @@
 #define CYAN "\x1b[36m"
 #define RESET "\x1b[0m"
 
-char cwd[100000];
-char tempHome[100000];
-char sysname[100000];
-char username[1000000];
-char *commands[100000];
-char *token[100000];
-char prevDir[100000];
+extern char cwd[100000];
+extern char tempHome[100000];
+extern char sysname[100000];
+extern char username[1000000];
+extern char *commands[100000];
+extern char *token[100000];
+extern char prevDir[100000];
 
 
 struct jobs{
@@ -38,8 +42,8 @@ struct jobs{
 };
 typedef struct jobs bjob;
 
-int bjob_count;
-bjob job_arr[100000];
+extern int bjob_count;
+extern bjob job_arr[100000];
 
 void init_shell();
 void prompt();
@@ -51,3 +55,7 @@ void ls(int numTokens);
 void foreground();
 void background(int numTokens);
 void childHandler();
+void pinfo(int numTokens);
+
+#endif /* HEADERS_H */
+

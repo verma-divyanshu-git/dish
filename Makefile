@@ -1,2 +1,2 @@
-target:
+dish:
 	gcc *.c -o dish
