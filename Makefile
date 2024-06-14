@@ -1,2 +1,2 @@
-dish:
-	gcc *.c -o dish
+gcc *.c
+./dish.out
