@@ -9,10 +9,13 @@ void cd (int numTokens, char** token)
         printf("cd command can have only one argument\n");
         return;
     }
-    	else if (numTokens == 1 || strcmp(token[1], "~") == 0){
-		chdir(tempHome);
+	else if (numTokens == 1 || strcmp(token[1], "~") == 0){
+		int err = chdir(tempHome);
+		if (err < 0){
+			perror("chdir failed");
+		}
 	}
-	else if(strcmp(token[1], "-") == 0)
+    else if(strcmp(token[1], "-") == 0)
 		chdir(prevDir);
 	else{
 		int err = chdir(token[1]);
