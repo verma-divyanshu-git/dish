@@ -32,6 +32,7 @@ extern char tempHome[100000];
 extern char sysname[100000];
 extern char username[1000000];
 extern char *commands[100000];
+extern char *pipes[100000];
 extern char *token[100000];
 extern char prevDir[100000];
 
