@@ -57,6 +57,7 @@ void foreground();
 void background(int numTokens);
 void childHandler();
 void pinfo(int numTokens);
+void pipeExecute(int numTokens, int new_fd[], int old_fd[], int k);
 
 #endif /* HEADERS_H */
 
