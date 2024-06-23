@@ -35,7 +35,7 @@ extern char *commands[100000];
 extern char *pipes[100000];
 extern char *token[100000];
 extern char prevDir[100000];
-
+extern pid_t shellpid;
 
 struct jobs{
     char name[10000];
@@ -58,6 +58,8 @@ void background(int numTokens);
 void childHandler();
 void pinfo(int numTokens);
 void pipeExecute(int numTokens, int new_fd[], int old_fd[], int k);
+void ctrl_c();
+void ctrl_z();
 
 #endif /* HEADERS_H */
 
