@@ -7,24 +7,24 @@ A shell made in C which simulates the bash/zsh shell and supports all shell comm
 2. cd into the directory `dish`.
 3. Run the command `make`. If you don't have make installed:
    - **For Debian/Ubuntu Linux**:
-     Install `make` using:
-     sudo apt install make
+     Install make using:
+     `sudo apt install make`
 
    - **For Fedora Linux**:
-     Install `make` using:
-     sudo dnf install make
+     Install make using:
+     `sudo dnf install make`
 
    - **For CentOS/RHEL Linux**:
-     Install `make` using:
-     sudo yum install make
+     Install make using:
+     `sudo yum install make`
      ```
    - **For macOS** (using Homebrew):
-     Install `make` using:
-     brew install make
+     Install make using:
+     `brew install make`
      ```
    - **For Windows** (using Chocolatey):
-     Install `make` using:
-     choco install make
+     Install make using:
+     `choco install make`
 
    Ensure `make` is installed before proceeding with step 4.
 
