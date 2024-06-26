@@ -27,24 +27,28 @@
 #define CYAN "\x1b[36m"
 #define RESET "\x1b[0m"
 
-extern char cwd[100000];
-extern char tempHome[100000];
-extern char sysname[100000];
-extern char username[1000000];
-extern char *commands[100000];
-extern char *pipes[100000];
-extern char *token[100000];
-extern char prevDir[100000];
+extern char cwd[1000];
+extern char tempHome[1000];
+extern char sysname[1000];
+extern char username[10000];
+extern char *commands[1000];
+extern char *pipes[1000];
+extern char *token[1000];
+extern char prevDir[1000];
 extern pid_t shellpid;
 
 struct jobs{
-    char name[10000];
+    char name[100];
     pid_t pid;
+    int job_num;
 };
+
 typedef struct jobs bjob;
 
 extern int bjob_count;
-extern bjob job_arr[100000];
+extern bjob job_arr[100];
+extern int job_num_available[100];
+extern bjob curr_foregound_job;
 
 void init_shell();
 void prompt();
@@ -60,6 +64,11 @@ void pinfo(int numTokens);
 void pipeExecute(int numTokens, int new_fd[], int old_fd[], int k);
 void ctrl_c();
 void ctrl_z();
+void jobs(int numTokens);
+void sig(int numTokens);
+void bg(int numTokens);
+void fg(int numTokens);
+int getJobIndex_givenPid(int pid);
 
 #endif /* HEADERS_H */
 
